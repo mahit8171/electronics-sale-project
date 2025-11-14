@@ -16,6 +16,7 @@ df = df.loc[df['date'] == today]
 # print(df.head())
 df = df.groupby('product').agg(total_sales = ('sales', 'sum')).reset_index()
 # print(df)
-#df.to_csv(f'{today} report.csv')
+df.to_csv(f'{today} report.csv')
 plt.bar(df['product'], df['total_sales'])
 plt.savefig(f'{today}report.png')
+
